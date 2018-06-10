@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "browserify": "^16.2.2",
+    "ethereumjs-util": "4.5.0",
+    "solc": "^0.4.4",
+    "web3": "0.17.0-alpha"
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+	<head>
+		<title>Wheel Chair</title>
+		<link rel="stylesheet" href="style.css">
+		<style>
+			#over div{
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="particles-js">
+      <div class="container">
+				<div id="over" style="padding-left:160pt; display:block;">
+					<div class="image">
+						<img style="opacity:0.2; margin-top:20px; margin-left: 110px; display: inline-block;" src="neurawave.png" alt="Neura Wave" height="500" width="500" class="img-responsive">
+              <div id="verticalcenter" >
+                  <form style="position:absolute; top: 50%; vertical-align: middle; margin-left: 170px;">
+                         <input type="button" class="btn-red btn-lg" Style=" font-weight:bold;width: 290px; vertical-align: top" value="INITIATE" onclick="httpGetAsync('http://192.168.15.209:5005/list')" >
+                         <br>
+                         <input type="text" style="width: 290px;line-height:60px; border-radius: 4px;background-color:white; position:relative; color:black; margin-top:60px; margin-left:18px; text-align:center;" value = "STATUS" id="status" disabled> 
+                         <br>
+											</form>
+										</div>
+                  </div>
+          </div>
+        </div>
+    	</div>
+    	<script type="text/javascript">
+    		function httpGetAsync(theUrl, callback)
+				{
+				    var xmlHttp = new XMLHttpRequest();
+				    xmlHttp.onreadystatechange = function() { 
+				        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+				            callback(xmlHttp.responseText);
+				    }
+				    xmlHttp.open("GET", theUrl, true);  
+				    xmlHttp.send(null);
+				    console.log(callback);
+				}
+			
+			// function hello(){
+			// 	var source = new EventSource("http://192.168.15.209:5005/list");
+			//     source.onmessage = function(event) {
+			//         document.getElementById("status").innerHTML = event;
+			//     };
+			// }
+    	</script>
+		<script type="text/javascript" src="js/particles.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
